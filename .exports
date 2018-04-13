@@ -1,0 +1,22 @@
+export ZSH=$DOTFILES/zsh
+
+# define the code directory
+# This is where my code exists and where I want the `c` autocomplete to work from exclusively
+if [[ -d ~/dev ]]; then
+    export CODE_DIR=~/dev
+fi
+
+export EDITOR='code'
+export GIT_EDITOR='code'
+export PATH=/usr/local/bin:$PATH
+# add /usr/local/sbin
+if [[ -d /usr/local/sbin ]]; then
+    export PATH=/usr/local/sbin:$PATH
+fi
+
+# adding path directory for custom scripts
+export PATH=$DOTFILES/bin:$PATH
+# check for custom bin directory and add to path
+if [[ -d ~/bin ]]; then
+    export PATH=~/bin:$PATH
+fi
