@@ -18,11 +18,11 @@ formulas=(
     # direnv
     # dnsmasq
     fzf
-    git
-    'grep --with-default-names'
-    highlight
-    hub
-    markdown
+    #git
+    #'grep --with-default-names'
+    #highlight
+    #hub
+    #markdown
     mas
     # neovim/neovim/neovim
     # node
@@ -35,12 +35,12 @@ formulas=(
     # tmux
     tree
     wget
-    vim
+    #vim
     z
     zsh
-    ripgrep
-    git-standup
-    entr
+    #ripgrep
+    #git-standup
+    #entr
     zplug
 )
 
