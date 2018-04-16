@@ -6,9 +6,4 @@ command_exists() {
 
 export DOTFILES="$HOME/.dotfiles"
 export ZPLUG_HOME="$DOTFILES/zplug"
-
-## --- NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 source $DOTFILES/.exports

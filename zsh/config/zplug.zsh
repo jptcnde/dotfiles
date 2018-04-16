@@ -10,7 +10,8 @@ fi
 
 source $ZPLUG_HOME/init.zsh
 # Make sure to use double quotes
-zplug "zsh-users/zsh-history-substring-search"
+zplug "tymm/zsh-directory-history", as:command, use:"dirhist"
+zplug "tymm/zsh-directory-history"
 
 # Use the package as a command
 # And accept glob patterns (e.g., brace, wildcard, ...)
@@ -31,9 +32,21 @@ zplug "junegunn/fzf-bin", \
     use:"*darwin*amd64*"
 
 # Supports oh-my-zsh plugins and the like
-zplug "plugins/git",   from:oh-my-zsh
+# zplug "plugins/git",   from:oh-my-zsh
 
 # Also prezto
+zplug "modules/environment", from:prezto
+zplug "modules/terminal", from:prezto
+zplug "modules/editor", from:prezto
+zplug "modules/history", from:prezto
+zplug "modules/directory", from:prezto
+zplug "modules/spectrum", from:prezto
+zplug "modules/utility", from:prezto
+zplug "modules/completion", from:prezto
+zplug "modules/archive", from:prezto
+zplug "modules/git", from:prezto
+zplug "modules/ssh", from:prezto
+zplug "modules/wakeonlan", from:prezto
 zplug "modules/prompt", from:prezto
 
 # Load if "if" tag returns true
@@ -84,7 +97,13 @@ zplug "b4b4r07/emoji-cli", \
 # e.g., zsh-syntax-highlighting must be loaded
 # after executing compinit command and sourcing other plugins
 # (If the defer tag is given 2 or above, run after compinit command)
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zdharma/fast-syntax-highlighting", defer:2
+
+zplug "mafredri/zsh-async"
+zplug "seletskiy/zsh-fuzzy-search-and-edit"
+
+# added term color
+zplug "chrissicool/zsh-256color"
 
 # Load theme file
 zplug 'dracula/zsh', as:theme
