@@ -49,9 +49,6 @@ zplug "modules/ssh", from:prezto
 zplug "modules/wakeonlan", from:prezto
 zplug "modules/prompt", from:prezto
 
-# Load if "if" tag returns true
-zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-
 # Run a command after a plugin is installed/updated
 # Provided, it requires to set the variable like the following:
 # ZPLUG_SUDO_PASSWORD="********"
@@ -89,6 +86,7 @@ zplug "stedolan/jq", \
     as:command, \
     rename-to:jq
 zplug "b4b4r07/emoji-cli", \
+    as:command, \
     on:"stedolan/jq"
 # Note: To specify the order in which packages should be loaded, use the defer
 #       tag described in the next section
@@ -97,7 +95,7 @@ zplug "b4b4r07/emoji-cli", \
 # e.g., zsh-syntax-highlighting must be loaded
 # after executing compinit command and sourcing other plugins
 # (If the defer tag is given 2 or above, run after compinit command)
-zplug "zdharma/fast-syntax-highlighting", defer:2
+zplug "zdharma/fast-syntax-highlighting", defer:3
 
 zplug "mafredri/zsh-async"
 zplug "seletskiy/zsh-fuzzy-search-and-edit"
@@ -107,6 +105,12 @@ zplug "chrissicool/zsh-256color"
 
 # Load theme file
 zplug 'dracula/zsh', as:theme
+
+# NVM
+zplug "creationix/nvm", use:nvm.sh
+
+# PHPVM
+# zplug "jptcnde/phpvm", as:command, use:phpvm
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
