@@ -1,7 +1,7 @@
 # gitconfig
 [user]
-	name = jptcnde
-	email = jptcnde@gmail.com
+	name = tropet
+	email = jptconiconde@gmail.com
 [github]
 	user = jptcnde
 [init]
@@ -135,6 +135,7 @@
     renames = copies
     mnemonicprefix = true
     compactionHeuristic = true
+	tool = meld
 [difftool]
     prompt = false
 [apply]
@@ -153,7 +154,7 @@
     extendRegexp = true
     lineNumber = true
 [credential]
-	helper = cache --timeout 3600
+	helper = store
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
@@ -164,3 +165,5 @@
 [pager]
     diff = "diff-so-fancy | less --tabs=4 -RFX"
     show = "diff-so-fancy | less --tabs=4 -RFX"
+[gui]
+	editor = subl

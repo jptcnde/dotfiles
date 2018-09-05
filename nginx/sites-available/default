@@ -1,9 +1,9 @@
 server {
     listen      80;
-    server_name app localhost .dev;
+    server_name app localhost;
 
     # the location of our projects directory
-    set $basepath "/Users/nicknisi/code";
+    set $basepath "/home/jpt/dev/";
 
     set $domain $host;
     if ($domain ~ "^(.*)\.dev$") {

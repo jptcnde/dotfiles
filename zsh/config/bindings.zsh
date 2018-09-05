@@ -13,13 +13,3 @@ bindkey -M vicmd "/" history-incremental-search-baczEkward
 bindkey -M vicmd "?" history-incremental-search-forward
 #oh wow! This is killer… try it!
 bindkey -M vicmd "q" push-line
-# Bind up/down arrow keys to navigate through your history
-bindkey '\e[A' directory-history-search-backward
-bindkey '\e[B' directory-history-search-forward
-
-# Bind CTRL+k and CTRL+D to substring search
-bindkey '^D' history-substring-search-up
-bindkey '^F' history-substring-search-down
-
-# ctrl + p // https://github.com/seletskiy/zsh-fuzzy-search-and-edit
-bindkey '^P' fuzzy-search-and-edit

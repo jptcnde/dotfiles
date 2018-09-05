@@ -26,7 +26,7 @@ formulas=(
     mas
     # neovim/neovim/neovim
     # node
-    # nginx
+    nginx
     # python
     # rbenv
     # reattach-to-user-namespace
