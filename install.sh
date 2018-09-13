@@ -19,12 +19,6 @@ source install/git.sh
 
 source install/brew.sh
 
-# only perform macOS-specific install
-if [ "$(uname)" == "Darwin" ]; then
-    echo -e "\\n\\nRunning on OSX"
-    source install/osx.sh
-fi
-
 if ! command_exists zsh; then
     echo "zsh not found. Please install and then re-run installation scripts"
     exit 1

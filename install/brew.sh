@@ -1,46 +1,27 @@
 #!/usr/bin/env bash
 
 if test ! "$( which brew )"; then
-    if [ "$(uname)" == "Darwin" ]; then
-        echo "Installing homebrew"
-        ruby -e "$( curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install )"
-    else
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-    fi
+    echo "Installing homebrew"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+    test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+    test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
+    test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.bash_profile
+    echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
 fi
 
 echo -e "\\n\\nInstalling homebrew packages..."
 echo "=============================="
 
 formulas=(
+    zsh
+    shellcheck
+    shfmt
     ack
-    # diff-so-fancy
-    # direnv
-    # dnsmasq
     fzf
-    #git
-    #'grep --with-default-names'
-    #highlight
-    #hub
-    #markdown
-    mas
-    # neovim/neovim/neovim
-    # node
-    nginx
-    # python
-    # rbenv
-    # reattach-to-user-namespace
-    # the_silver_searcher
-    # shellcheck
-    # tmux
     tree
     wget
-    #vim
     z
-    zsh
-    #ripgrep
-    #git-standup
-    #entr
     zplug
 )
 
