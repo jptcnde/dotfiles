@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 
 if test ! "$( which brew )"; then
-    echo "Installing homebrew"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-
-    test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
-    test -d /home/linuxbrew/.linuxbrew && PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
-    test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.bash_profile
-    echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
+    PATH="$HOME/.linuxbrew/bin:$PATH"
+    git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
+    brew
 fi
 
 echo -e "\\n\\nInstalling homebrew packages..."
@@ -18,7 +14,6 @@ formulas=(
     shellcheck
     shfmt
     ack
-    fzf
     tree
     wget
     z
@@ -35,9 +30,9 @@ for formula in "${formulas[@]}"; do
 done
 
 # After the install, setup fzf
-echo -e "\\n\\nRunning fzf install script..."
-echo "=============================="
-/usr/local/opt/fzf/install --all --no-bash --no-fish
+# echo -e "\\n\\nRunning fzf install script..."
+# echo "=============================="
+# /usr/local/opt/fzf/install --all --no-bash --no-fish
 
 # after hte install, install neovim python libraries
 # echo -e "\\n\\nRunning Neovim Python install"
