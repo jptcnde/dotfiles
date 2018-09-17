@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
 if test ! "$( which brew )"; then
-    PATH="$HOME/.linuxbrew/bin:$PATH"
-    git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
-    brew
+    HOMEBREW_PREFIX=$HOME/.linuxbrew
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+    test -d ~/.linuxbrew && PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+    test -r ~/.bash_profile && echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.bash_profile
+    echo "export PATH='$(brew --prefix)/bin:$(brew --prefix)/sbin'":'"$PATH"' >>~/.profile
 fi
 
 echo -e "\\n\\nInstalling homebrew packages..."
@@ -19,6 +23,7 @@ formulas=(
     z
     zplug
     stormssh
+    fzf
 )
 
 for formula in "${formulas[@]}"; do
@@ -30,10 +35,11 @@ for formula in "${formulas[@]}"; do
     fi
 done
 
-# After the install, setup fzf
-# echo -e "\\n\\nRunning fzf install script..."
-# echo "=============================="
-# /usr/local/opt/fzf/install --all --no-bash --no-fish
+After the install, setup fzf
+echo -e "\\n\\nRunning fzf install script..."
+echo "=============================="
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install --all --no-bash --no-fish
 
 # after hte install, install neovim python libraries
 # echo -e "\\n\\nRunning Neovim Python install"
