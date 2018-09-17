@@ -18,8 +18,6 @@ if [[ -a ~/.localrc ]]; then
     source ~/.localrc
 fi
 
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
@@ -40,9 +38,7 @@ if command_exists hub; then
     eval "$(hub alias -s)"
 fi
 
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # ctrl + p // https://github.com/seletskiy/zsh-fuzzy-search-and-edit

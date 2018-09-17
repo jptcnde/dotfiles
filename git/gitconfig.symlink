@@ -154,7 +154,6 @@
     extendRegexp = true
     lineNumber = true
 [credential]
-	helper = store
 [difftool "Kaleidoscope"]
 	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool "Kaleidoscope"]
