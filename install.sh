@@ -13,6 +13,8 @@ echo "Initializing submodule(s)"
 
 git submodule update --init --recursive
 
+# source install/backup.sh
+
 source install/link.sh
 
 source install/git.sh
