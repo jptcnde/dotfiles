@@ -20,10 +20,7 @@ export PATH=$DOTFILES/bin:$PATH
 if [[ -d ~/bin ]]; then
     export PATH=~/bin:$PATH
 fi
-export ZPLUG_HOME=$HOME/.linuxbrew/opt/zplug
+
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 
 export NVM_DIR="$HOME/.nvm"
-
-if [[ -e "$HOME/.exports" ]]; then
-    source "$HOME/.exports"
-fi
