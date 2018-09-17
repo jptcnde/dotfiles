@@ -23,3 +23,7 @@ fi
 export ZPLUG_HOME=$HOME/.linuxbrew/opt/zplug
 
 export NVM_DIR="$HOME/.nvm"
+
+if [[ -e "$HOME/.exports" ]]; then
+    source "$HOME/.exports"
+fi

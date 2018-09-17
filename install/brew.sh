@@ -18,6 +18,7 @@ formulas=(
     wget
     z
     zplug
+    stormssh
 )
 
 for formula in "${formulas[@]}"; do
